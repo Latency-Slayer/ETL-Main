@@ -1,4 +1,4 @@
-package ETL;
+package school.component;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
@@ -9,7 +9,6 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -19,9 +18,8 @@ public class Main implements RequestHandler<S3Event, String> {
     private final AmazonS3 s3Client = AmazonS3ClientBuilder.defaultClient();
 
     // Bucket de destino para o CSV gerado
-    private static final String DESTINATION_BUCKET = "latency-slayer-bucket-s3-trusted";
+    private static final String DESTINATION_BUCKET = "trusted-components";
 
-    @Override
     public String handleRequest(S3Event s3Event, Context context) {
 
         String sourceBucket = s3Event.getRecords().get(0).getS3().getBucket().getName();

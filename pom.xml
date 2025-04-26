@@ -77,7 +77,7 @@
                     <transformers>
                             <tranformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                 <mainClass>
-                                    school.sptech.Main
+                                    school.Main
                                 </mainClass>
                             </tranformer>
                     </transformers>

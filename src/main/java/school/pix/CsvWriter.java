@@ -1,4 +1,4 @@
-package school.sptech;
+package school.pix;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

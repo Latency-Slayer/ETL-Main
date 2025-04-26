@@ -1,4 +1,4 @@
-package school.sptech;
+package school.pix;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

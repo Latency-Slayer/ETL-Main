@@ -1,11 +1,8 @@
-package ETL;
+package school.component;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
-
-import static ETL.Main.formmatData;
+import static school.component.Main.formmatData;
 
 public class Teste {
     public static void main(String[] args) throws IOException {

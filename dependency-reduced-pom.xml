@@ -20,7 +20,7 @@
         <configuration>
           <transformers>
             <tranformer>
-              <mainClass>school.sptech.Main</mainClass>
+              <mainClass>school.Main</mainClass>
             </tranformer>
           </transformers>
           <filters>
