@@ -1,0 +1,50 @@
+[
+  {
+    "AnoMes": 202302,
+    "PAG_PFPJ": "PF",
+    "REC_PFPJ": "PF",
+    "PAG_REGIAO": "CENTRO-OESTE",
+    "REC_REGIAO": "NORDESTE",
+    "PAG_IDADE": "entre 30 e 39 anos",
+    "REC_IDADE": "entre 30 e 39 anos",
+    "FINALIDADE": "Pix",
+    "VALOR": 1148814.13,
+    "QUANTIDADE": 27622
+  },
+  {
+    "AnoMes": 202507,
+    "PAG_PFPJ": "PJ",
+    "REC_PFPJ": "PF",
+    "PAG_REGIAO": "CENTRO-OESTE",
+    "REC_REGIAO": "NORDESTE",
+    "PAG_IDADE": "entre 40 e 49 anos",
+    "REC_IDADE": "entre 50 e 59 anos",
+    "FINALIDADE": "Pix",
+    "VALOR": 1148814.13,
+    "QUANTIDADE": 27622
+  },
+  {
+    "AnoMes": 202109,
+    "PAG_PFPJ": "PJ",
+    "REC_PFPJ": "PF",
+    "PAG_REGIAO": "CENTRO-OESTE",
+    "REC_REGIAO": "NORDESTE",
+    "PAG_IDADE": "entre 10 e 39 anos",
+    "REC_IDADE": "entre 20 e 79 anos",
+    "FINALIDADE": "Pix",
+    "VALOR": 1148814.13,
+    "QUANTIDADE": 27622
+  },
+  {
+    "AnoMes": 202302,
+    "PAG_PFPJ": "PF",
+    "REC_PFPJ": "PF",
+    "PAG_REGIAO": "CENTRO-OESTE",
+    "REC_REGIAO": "NORDESTE",
+    "PAG_IDADE": "entre 50 e 59 anos",
+    "REC_IDADE": "entre 80 e 99 anos",
+    "FINALIDADE": "Pix",
+    "VALOR": 1148814.13,
+    "QUANTIDADE": 27622
+  }
+]
