@@ -1,4 +1,4 @@
-package school.pix;
+package school.process;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
@@ -6,7 +6,9 @@ import com.amazonaws.services.lambda.runtime.events.S3Event;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.List;
 
 public class Main implements RequestHandler<S3Event, String> {
@@ -25,20 +27,19 @@ public class Main implements RequestHandler<S3Event, String> {
 
             try {
                 // Leitura do arquivo JSON do bucket de origem
+
+                context.getLogger().log("Pegando arquivo " + sourceKey);
                 InputStream s3InputStream = s3Client.getObject(sourceBucket, sourceKey).getObjectContent();
+                context.getLogger().log("Pegou o arquivo");
 
-                // Conversão do JSON para uma lista de objetos Pix usando o Mapper
-                PixMapper mapper = new PixMapper();
-                List<Pix> p = mapper.mapearPix(s3InputStream);
+                ProcessMapper mapper = new ProcessMapper();
+                List<Json> p = mapper.mapearProcesso(s3InputStream);
 
-                // Geração do arquivo CSV a partir da lista de Pix usando o CsvWriter
                 CsvWriter csvWriter = new CsvWriter();
                 ByteArrayOutputStream csvOutputStream = csvWriter.writeCsv(p);
 
-                // Converte o ByteArrayOutputStream para InputStream para enviar ao bucket de destino
                 InputStream csvInputStream = new ByteArrayInputStream(csvOutputStream.toByteArray());
 
-                // Envio do CSV para o bucket de destino
                 s3Client.putObject(DESTINATION_BUCKET, sourceKey.replace(".json", ".csv"), csvInputStream, null);
 
                 return "Sucesso no processamento";

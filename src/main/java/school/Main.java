@@ -24,6 +24,12 @@ public class Main implements RequestHandler<S3Event, String> {
                 school.pix.Main mainPix = new school.pix.Main();
                 mainPix.handleRequest(s3Event, context);
             }
+
+            if (pasta.equals("process-data")){
+                school.process.Main mainProcess = new school.process.Main();
+                mainProcess.handleRequest(s3Event, context);
+            }
+
             return "Sucesso no processamento";
         } catch (Exception e) {
             // Tratamento de erros e log do contexto em caso de exceção
