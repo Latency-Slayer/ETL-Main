@@ -16,7 +16,7 @@ public class Main implements RequestHandler<S3Event, String> {
         private final AmazonS3 s3Client = AmazonS3ClientBuilder.defaultClient();
 
         // Bucket de destino para o CSV gerado
-        private static final String DESTINATION_BUCKET = "latency-slayer-trusted";
+        private static final String DESTINATION_BUCKET = "latency-trusted";
 
         @Override
         public String handleRequest (S3Event s3Event, Context context){
