@@ -12,21 +12,23 @@ public class Main implements RequestHandler<S3Event, String> {
         String sourceKey = s3Event.getRecords().getFirst().getS3().getObject().getKey();
 
         try {
-            // Leitura do arquivo JSON do bucket de origem
-            String pasta = sourceKey.split("/")[0];
-
-            if (pasta.equals("component-data")){
+            if (sourceKey.contains("component-data/")){
                 school.component.Main main = new school.component.Main();
                 main.handleRequest(s3Event, context);
             }
 
-            if (pasta.equals("pix-data")){
+            if (sourceKey.contains("pix-data/")){
                 school.pix.Main mainPix = new school.pix.Main();
                 mainPix.handleRequest(s3Event, context);
             }
 
-            if (pasta.equals("process-data")){
+            if (sourceKey.contains("process-data/")){
                 school.process.Main mainProcess = new school.process.Main();
+                mainProcess.handleRequest(s3Event, context);
+            }
+
+            if (sourceKey.contains("connections-data/")) {
+                school.connection.Main mainProcess = new school.connection.Main();
                 mainProcess.handleRequest(s3Event, context);
             }
 
